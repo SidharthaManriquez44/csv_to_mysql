@@ -11,3 +11,6 @@ isort~=5.13.2             # Sort Python imports
 
 # Type checking (optional but useful)
 mypy~=1.10.0              # Static type checker
+
+# Coverage
+codecov~=2.1.13
