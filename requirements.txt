@@ -1,0 +1,12 @@
+# Database connection and ORM
+SQLAlchemy~=2.0.41     # SQL toolkit and ORM to manage DB operations
+PyMySQL~=1.1.1         # MySQL database connector (used with SQLAlchemy)
+
+# CSV reading and data manipulation
+pandas~=2.2.3          # Powerful library to load and validate CSV data
+
+# Environment variable management
+python-dotenv~=1.1.0   # Loads environment variables from a .env file
+
+# Test
+
