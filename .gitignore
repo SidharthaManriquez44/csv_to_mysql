@@ -1,0 +1,40 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Entorno virtual
+venv/
+.env/
+.venv/
+.env
+
+# PyCharm
+.idea/
+*.iml
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Empaquetado
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/*.log
+
+# Files
+data/*.csv
+
+# VSCode (si lo usas)
+.vscode/
+
+

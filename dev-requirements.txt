@@ -1,0 +1,13 @@
+# Testing
+pytest~=8.2.0             # Run unit tests
+pytest-cov~=5.0.0         # Measure test coverage
+
+# Linting (style checks)
+flake8~=7.0.0             # Check Python code style (PEP8)
+
+# Formatting
+black~=24.4.2             # Code formatter
+isort~=5.13.2             # Sort Python imports
+
+# Type checking (optional but useful)
+mypy~=1.10.0              # Static type checker
