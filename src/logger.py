@@ -1,4 +1,7 @@
 import logging
+import os
+
+os.makedirs("logs", exist_ok=True)
 
 # Standard Format
 formatter = logging.Formatter('%(asctime)s - [%(levelname)s] - %(message)s')
