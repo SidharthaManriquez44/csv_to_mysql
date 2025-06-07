@@ -1,7 +1,6 @@
 import os
 import pytest
 import pandas as pd
-from sqlalchemy import create_engine
 from src.converter.csv_to_sql import convert_csv_to_sql
 
 @pytest.fixture

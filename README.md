@@ -100,6 +100,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ✍️ Author
 Developed by `Sidhartha Manriquez`.
 Feel free to reach out or contribute to improve this project!
-
-make install
-make run
