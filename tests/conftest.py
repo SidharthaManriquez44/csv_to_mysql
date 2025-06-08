@@ -21,7 +21,7 @@ def test_db_config():
     port = 3307  # default mapped port in docker-compose
 
     # If running in GitHub Actions and using service, override
-    if is_ci and os.getenv("GITHUB_ACTIONS") == "true":
+    if is_ci and os.getenv("USE_DOCKER_SERVICE") == "true":
         # assuming you're using services: mysql-test
         host = "mysql-test"
         port = 3306
@@ -29,8 +29,8 @@ def test_db_config():
     return {
         "user": "test_user",
         "password": "test_password",
-        "host": host,
-        "port": port,
+        "host": "127.0.0.1",
+        "port": 3307,
         "db_name": "test_db"
     }
 
