@@ -1,17 +1,7 @@
-import os
 import pytest
 import pandas as pd
 from src.converter.csv_to_sql import convert_csv_to_sql
-
-@pytest.fixture
-def test_db_config():
-    return {
-        "user": "test_user",
-        "password": "test_password",
-        "host": "localhost",
-        "port": 3306,
-        "db_name": "test_db"
-    }
+from sqlalchemy import create_engine
 
 @pytest.fixture
 def sample_csv(tmp_path):
@@ -20,10 +10,23 @@ def sample_csv(tmp_path):
     df.to_csv(file, index=False)
     return str(file)
 
-def test_convert_csv_to_sql_creates_table(sample_csv, test_db_config):
-    # Skip test if test_db not configured
-    if not os.getenv("RUN_DB_TESTS"):
-        pytest.skip("Skipping DB test. Set RUN_DB_TESTS=1 to enable.")
+@pytest.fixture
+def sqlite_engine():
+    return create_engine("sqlite:///:memory:")
 
+@pytest.mark.integration
+def test_convert_csv_to_sql_creates_table(sample_csv, test_db_config):
     table_name = convert_csv_to_sql(sample_csv, test_db_config)
     assert table_name == "sample"
+
+def test_convert_csv_to_sql_sqlite(sample_csv, sqlite_engine):
+    table_name = convert_csv_to_sql(sample_csv, sqlite_engine)
+    assert table_name == "sample"
+
+def test_convert_csv_to_sql_only_logic(mocker, sample_csv, sqlite_engine):
+    mock_to_sql = mocker.patch("pandas.DataFrame.to_sql", return_value=None)
+
+    table_name = convert_csv_to_sql(sample_csv, sqlite_engine)
+    assert table_name == "sample"
+
+    mock_to_sql.assert_called_once()
