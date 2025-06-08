@@ -39,9 +39,6 @@ class MySQLConnection:
         try:
             connection_string = f"mysql+pymysql://{self.USER}:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.NAME}"
             engine = create_engine(connection_string)
-
-            with engine.connect():
-                logger.info(f"Connection to the database established successfully.")
             return engine
         except SQLAlchemyError as e:
             logger.error("Error connecting to database: %s", e)
