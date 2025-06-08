@@ -35,7 +35,7 @@ def test_db_config():
     }
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session")
 def wait_for_mysql_ready(test_db_config):
     """
     Wait until MySQL is ready before starting the test session.
