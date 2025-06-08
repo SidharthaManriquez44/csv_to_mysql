@@ -1,5 +1,3 @@
-# tests/conftest.py
-
 import pytest
 import os
 import time
@@ -54,7 +52,7 @@ def wait_for_mysql_ready(test_db_config):
                 user=test_db_config["user"],
                 password=test_db_config["password"],
                 database=test_db_config["db_name"],
-                connect_timeout=5
+                connect_timeout=60
             )
             conn.close()
             logging.info("✅ MySQL is ready and accepting connections.")

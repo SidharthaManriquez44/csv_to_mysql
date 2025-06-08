@@ -5,7 +5,7 @@ from sqlalchemy import text
 
 logging.basicConfig(level=logging.INFO)
 
-def wait_for_mysql(host, port, user, password, db_name, timeout=10):
+def wait_for_mysql(host, port, user, password, db_name, timeout=60):
     """
     Wait until MySQL database is ready and accepting connections.
     """
