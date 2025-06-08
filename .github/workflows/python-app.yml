@@ -26,7 +26,7 @@ jobs:
         pip install -r dev-requirements.txt
 
     - name: Start MySQL container
-      run: docker-compose up -d
+      run: docker compose up -d
 
     - name: Wait for MySQL to be ready
       run: |
