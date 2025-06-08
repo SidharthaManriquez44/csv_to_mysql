@@ -25,9 +25,22 @@ jobs:
         pip install -r requirements.txt
         pip install -r dev-requirements.txt
 
+    - name: Start MySQL container
+      run: docker-compose up -d
+
+    - name: Wait for MySQL to be ready
+      run: |
+        echo "Waiting for MySQL..."
+        for i in {1..15}; do
+          docker exec mysql_test_container mysqladmin ping -h localhost -ptest_password && break
+          echo "Retry $i..."
+          sleep 4
+        done
+
     - name: Run tests with coverage
       run: |
-          pytest --cov=src tests/
+        export RUN_DB_TESTS=1
+        pytest --cov=src --maxfail=2 --disable-warnings -v tests/
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
