@@ -11,7 +11,7 @@ def test_get_engine(mocker):
     mock_connect =mocker.patch("src.config.create_engine", return_value=mock_engine)
 
     # run the code that uses sqlalchemy.create_engine
-    connection = MySQLConnection(user="user", password="pass", host="localhost", port="3306", db_name="test")
+    connection = MySQLConnection(user="user", password="pass", host="127.0.0.1", port="3307", db_name="test")
     conn = connection.get_engine()
 
     # Verify that create_engine was called and that it returns the correct mock

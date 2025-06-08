@@ -15,7 +15,7 @@ def sqlite_engine():
     return create_engine("sqlite:///:memory:")
 
 @pytest.mark.integration
-def test_convert_csv_to_sql_creates_table(sample_csv, test_db_config):
+def test_convert_csv_to_sql_creates_table(sample_csv, test_db_config, clean_sample_table):
     table_name = convert_csv_to_sql(sample_csv, test_db_config)
     assert table_name == "sample"
 
