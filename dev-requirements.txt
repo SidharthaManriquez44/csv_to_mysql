@@ -2,6 +2,7 @@
 pytest~=8.2.0             # Run unit tests
 pytest-cov~=5.0.0         # Measure test coverage
 pytest-mock
+cryptography
 
 # Linting (style checks)
 flake8~=7.0.0             # Check Python code style (PEP8)

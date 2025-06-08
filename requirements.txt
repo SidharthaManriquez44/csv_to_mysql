@@ -12,3 +12,4 @@ python-dotenv~=1.1.0   # Loads environment variables from a .env file
 
 pytest-mock
 pytest~=8.2.2
+cryptography
