@@ -2,13 +2,20 @@ import time
 import pymysql
 import logging
 from sqlalchemy import text
+import os
 
 logging.basicConfig(level=logging.INFO)
 
-def wait_for_mysql(host, port, user, password, db_name, timeout=60):
+def wait_for_mysql(host, port, user, password, db_name, timeout=None):
     """
     Wait until MySQL database is ready and accepting connections.
     """
+    if timeout is None:
+        if os.getenv("CI"):
+            timeout = 90  # en GitHub Actions
+        else:
+            timeout = 30  # en local
+
     start_time = time.time()
     while time.time() - start_time < timeout:
         try:
