@@ -1,5 +1,6 @@
 # 📁 CSV to MySQL Converter (CLI)
 [![Python Tests](https://github.com/SidharthaManriquez44/csv_to_mysql/actions/workflows/python-app.yml/badge.svg)](https://github.com/SidharthaManriquez44/csv_to_mysql/actions/workflows/python-app.yml)
+[![Build Status](https://github.com/SidharthaManriquez44/csv_to_mysql/actions/workflows/test.yml/badge.svg)](https://github.com/SidharthaManriquez44/csv_to_mysql/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/SidharthaManriquez44/csv_to_mysql/graph/badge.svg?token=CJZE6LM7M5)](https://codecov.io/gh/SidharthaManriquez44/csv_to_mysql)
 
 A simple and interactive Python CLI tool to upload `.csv` files into a MySQL database. Designed for fast ingestion, validation, and logging — ideal for data engineers, analysts, and backend developers.

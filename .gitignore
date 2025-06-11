@@ -1,10 +1,10 @@
-# Archivos de Python
+# Python files
 __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
 
-# Entorno virtual
+# Virtual enviroment
 venv/
 .env/
 .venv/
@@ -19,7 +19,7 @@ venv/
 .coverage
 htmlcov/
 
-# Empaquetado
+# Wrappers
 build/
 dist/
 *.egg-info/
@@ -32,9 +32,10 @@ dist/
 logs/*.log
 
 # Files
-data/*.csv
+data/
+*.csv
 
-# VSCode (si lo usas)
+# VSCode
 .vscode/
 
 
